@@ -1,17 +1,19 @@
 {
   "development": {
     "username": "root",
-    "password": "1234",
-    "database": "exampledb",
+    "password": "root",
+    "database": "bootcampudb",
     "host": "localhost",
+    "port":3306,
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "1234",
-    "database": "testdb",
+    "password": "root",
+    "database": "bootcampudb",
     "host": "localhost",
     "dialect": "mysql",
+    "port":3306,
     "logging": false
   },
   "production": {
