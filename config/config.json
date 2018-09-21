@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "1234",
-    "database": "exampledb",
+    "password": "root",
+    "database": "bootcampudb",
     "host": "localhost",
     "dialect": "mysql"
   },
