@@ -1,3 +1,29 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+body {
+  background-image: url(../imgs/skyscraper.png);
+}
+
+.main-head {
+  font-size: 40pt;
+  margin-top: 20pt;
+}
+
+.sidebar {
+  height: 90vh;
+}
+.login {
+  font-size: 20pt;
+  margin-top: 20px;
+  background: rgba(0,0,0,0.5);
+  font-family: "Roboto Slab";
+}
+.login-head {
+  margin-top: 20px;
+  font-size: 40pt;
+}
+.login-form {
+  margin-bottom: 10px;
+}
