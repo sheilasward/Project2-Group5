@@ -1,20 +1,34 @@
 module.exports = function(sequelize, DataTypes) {
-  var Classes = sequelize.define("Classes", {
-    name: {
-      type: DataTypes.STRING
+  var Class = sequelize.define("Class", {
+    term: {
+      type: DataTypes.STRING,
+      primaryKey: false
     },
-    startTime: {
-      type: DataTypes.TIME
-    },
-    length: {
-      type: DataTypes.DECIMAL
-    },
-    teacher: {
-      type: DataTypes.CHAR
-    },
-    discipline: {
-      type: DataTypes.CHAR
+    section: {
+      type: DataTypes.STRING,
+      primaryKey: false
     }
   });
-  return Classes;
+
+  Class.associate = function(models) {
+
+    Class.hasMany(models.Enrollment, {
+      onDelete: "cascade",
+      constraints: true,
+      foreignKey: {
+        name: "classid"
+      }
+    });
+
+    Class.hasMany(models.Schedule, {
+      onDelete: "cascade",
+      constraints: true,
+      foreignKey: {
+        name: "classid"
+      }
+    });
+
+  };
+
+  return Class;
 };
