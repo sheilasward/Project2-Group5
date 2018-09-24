@@ -10,6 +10,14 @@ module.exports = function(app) {
       });
     });
   });
+  app.get("/login", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("login", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {

@@ -3,22 +3,27 @@
 }
 
 body {
-  background-image: url(../imgs/skyscraper.png);
+  background-image: url(../imgs/BCUbackground.jpg);
 }
 
 .main-head {
   font-size: 40pt;
   margin-top: 20pt;
+  padding: 10px;
+  background: rgba(0,0,0,0.9);
+  font-family: "Roboto Slab";
+  color: whitesmoke
 }
 
 .sidebar {
   height: 90vh;
 }
-.login {
+.login-container {
   font-size: 20pt;
   margin-top: 20px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.9);
   font-family: "Roboto Slab";
+  color: whitesmoke
 }
 .login-head {
   margin-top: 20px;
