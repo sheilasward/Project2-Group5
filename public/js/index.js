@@ -94,8 +94,8 @@ var handleDeleteBtnClick = function() {
   });
 };
 $("#log-in-link").on("click", function() {
-  console.log("get call goes here")
-})
+  console.log("get call goes here");
+});
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
