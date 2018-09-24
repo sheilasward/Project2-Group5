@@ -14,7 +14,7 @@ body {
 .sidebar {
   height: 90vh;
 }
-.login {
+.login-container {
   font-size: 20pt;
   margin-top: 20px;
   background: rgba(0,0,0,0.5);
