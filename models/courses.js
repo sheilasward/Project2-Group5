@@ -15,17 +15,7 @@ module.exports = function(sequelize, DataTypes) {
       onDelete: "cascade",
       constraints: true,
       foreignKey: {
-        name: "cnum"
-      }
-    });
-  };
-
-  Course.associate = function(models) {
-    Course.hasMany(models.Schedule, {
-      onDelete: "cascade",
-      constraints: true,
-      foreignKey: {
-        name: "cnum"
+        name: "courseid"
       }
     });
   };

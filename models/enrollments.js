@@ -1,13 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   var Enrollment = sequelize.define("Enrollment", {
-    snum: {
-      type: DataTypes.INTEGER,
-      primaryKey: true
-    },
-    cnum: {
-      type: DataTypes.INTEGER,
-      primaryKey: true
-    },
     term: {
       type: DataTypes.STRING,
       primaryKey: true
@@ -15,13 +7,14 @@ module.exports = function(sequelize, DataTypes) {
     section: {
       type: DataTypes.STRING,
       primaryKey: true
-    },
-    classid: {
-      type: DataTypes.INTEGER
     }
   });
 
   Enrollment.associate = function(models) {
+    Enrollment.belongsTo(models.Student, {
+      foreignKey: "studentid",
+      targetKey: "id"
+    });
     Enrollment.belongsTo(models.Class, {
       foreignKey: {
         name: "classid",

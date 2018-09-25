@@ -1,21 +1,19 @@
 module.exports = function(sequelize, DataTypes) {
   var Student = sequelize.define("Student", {
     lastName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1 - 100]
-      }
+      type: DataTypes.STRING
     },
     firstName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1 - 100]
-      }
+      type: DataTypes.STRING
     },
+    studentEmail: {
+      type: DataTypes.STRING,
+      validate: {
+        isEmail : true
+      }
+    }, 
     year: {
-      type: DataTypes.INTEGER
+      type: DataTypes.DATE
     }
   });
 
@@ -24,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
       onDelete: "cascade",
       constraints: true,
       foreignKey: {
-        name: "snum"
+        name: "studentid"
       }
     });
   };

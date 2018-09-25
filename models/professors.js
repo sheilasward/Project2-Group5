@@ -18,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
       onDelete: "cascade",
       constraints: true,
       foreignKey: {
-        name: "pnum"
+        name: "professorid"
       }
     });
   };
