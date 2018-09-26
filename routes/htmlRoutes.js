@@ -13,6 +13,11 @@ module.exports = function(app) {
       msg: "Welcome!"
     });
   });
+  app.get("/addcourse", function(req, res) {
+    res.render("addcourse", {
+      msg: "Welcome - Add a course!"
+    });
+  });
   app.get("/members", isAuthenticated, function(req, res) {
     res.render("members", {
       msg: "Welcome Member!"
