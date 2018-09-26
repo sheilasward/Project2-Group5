@@ -31,7 +31,7 @@ insert into courses (courseName, courseDesc, credits, dept, prerequisite, create
 
 select * from courses;
 
-insert into student values (1, 'Jones, Fred', 4);
+insert into classes (courseName, courseDesc, credits, dept, prerequisite, createdAt, updatedAt) values ('CSC-121', 'Computing Fundamentals', 4, 'Computer Science', 'CIS-115', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 insert into class values ('CS448', 'S2006', 1, 1);
 insert into class values ('CS448', 'S2006', 2, 1);
 insert into enrollment values (1, 'CS448', 'S2006', 2);

@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "MarlonJay",
+    "password": "root",
     "database": "bootcampudb",
     "host": "localhost",
     "dialect": "mysql",
