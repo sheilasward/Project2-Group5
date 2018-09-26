@@ -1,24 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
   var Class = sequelize.define("Class", {
-    classid: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true
-    },
-    cnum: {
-      type: DataTypes.INTEGER,
-      primaryKey: false
-    },
     term: {
-      type: DataTypes.STRING,
-      primaryKey: false
+      type: DataTypes.STRING
     },
     section: {
-      type: DataTypes.STRING,
-      primaryKey: false
-    },
-    pnum: {
-      type: DataTypes.INTEGER
+      type: DataTypes.STRING
     }
   });
 
@@ -38,10 +24,15 @@ module.exports = function(sequelize, DataTypes) {
         name: "classid"
       }
     });
-
     Class.belongsTo(models.Course, {
       foreignKey: {
-        name: "cnum",
+        name: "courseid",
+        allowNull: false
+      }
+    });
+    Class.belongsTo(models.Professor, {
+      foreignKey: {
+        name: "professorid",
         allowNull: false
       }
     });
