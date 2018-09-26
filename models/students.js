@@ -9,9 +9,9 @@ module.exports = function(sequelize, DataTypes) {
     studentEmail: {
       type: DataTypes.STRING,
       validate: {
-        isEmail : true
+        isEmail: true
       }
-    }, 
+    },
     year: {
       type: DataTypes.DATE
     }
