@@ -4,15 +4,17 @@
     "password": "root",
     "database": "bootcampudb",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port":3306
   },
   "test": {
     "username": "root",
-    "password": "1234",
+    "password": "root",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
-    "logging": false
+    "logging": false,
+    "port":3306
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",

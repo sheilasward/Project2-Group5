@@ -4,32 +4,31 @@
     </div>
     <div class="col-md-6 border border-dark main-body">
         <div class="row">
-            <div class="col-md-10 mx-auto text-center">
-                <a href="/"<span class="mx-auto"><img class="mx-auto" src="/imgs/BootcampU.png"></span></a>
-                {{!-- <h1 class="col-md mx-auto text-center main-head rounded">Bootcamp University</h1> --}}
+            <div class="col-md-10 mx-auto">
+                <h1 class="col-md mx-auto text-center main-head rounded">Bootcamp University</h1>
             </div>
         </div>
         <div class="row">
             <div class="col-md-10 mx-auto border border-dark rounded login-container">
-                <div class="col-md-10 mx-auto text-center rounded login-head">Sign Up Form</div>
+                <div class="col-md-10 mx-auto text-center rounded login-head">Add a Course</div>
                 <div class="row mx-auto">
-                    <form class="mx-auto signup">
+                    <form class="mx-auto login">
                         <div class="form-group text-center m-0">
-                            <label for="email-input m-0">Email address</label>
-                            <input type="email" class="form-control" id="email-input" placeholder="Enter email">
+                            <label for="cname-input m-0">Course Name</label>
+                            <input type="text" class="form-control" id="cname-input" placeholder="e.g. JavaScript">
                         </div>
                         <div class="form-group text-center m-0">
-                            <label for="password-input m-0">Password</label>
-                            <input type="password" class="form-control" id="password-input" placeholder="Password">
+                            <label for="credit-input m-0">Credits</label>
+                            <input type="text" class="form-control" id="credit-input" placeholder="default 3">
                         </div>
                         <div style="display: none" id="alert" class="alert alert-danger" role="alert">
                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                             <span class="sr-only">Error:</span> <span class="msg"></span>
                         </div>
                         <div class="mx-auto text-center">
-                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                            <button type="submit" class="btn btn-primary login-btn">Add Course</button>
                         </div>
-                        <p class="text-center">Or log in <a href="/login">here</a></p>
+                        
                     </form>
                 </div>
             </div>

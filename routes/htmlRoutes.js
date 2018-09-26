@@ -1,25 +1,32 @@
-var db = require("../models");
-
+// var db = require("../models");
+// Requiring our custom middleware for checking if a user is logged in
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+    res.render("index", {
+      msg: "Welcome!"
+    });
+  });
+  app.get("/login", function(req, res) {
+    res.render("login", {
+      msg: "Welcome!"
+    });
+  });
+  app.get("/addcourse", function(req, res) {
+    res.render("addcourse", {
+      msg: "Welcome - Add a course!"
+    });
+  });
+  app.get("/members", isAuthenticated, function(req, res) {
+    res.render("members", {
+      msg: "Welcome Member!"
     });
   });
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
+    res.render("example", {});
   });
 
   // Render 404 page for any unmatched routes
