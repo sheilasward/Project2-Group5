@@ -17,6 +17,8 @@ module.exports = function(app) {
 
   // Create a new example
   app.post("/api/addcourse", function(req, res) {
+    console.log("recieved");
+    console.log(req.body);
     db.Course.create(req.body).then(function(dbCourse) {
       res.json(dbCourse);
     });
