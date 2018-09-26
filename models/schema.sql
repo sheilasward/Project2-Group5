@@ -1,2 +1,0 @@
-DROP DATABASE IF EXISTS bootcampudb;
-CREATE DATABASE bootcampudb;
