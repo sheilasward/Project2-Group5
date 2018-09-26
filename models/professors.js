@@ -1,13 +1,15 @@
 module.exports = function(sequelize, DataTypes) {
   var Professor = sequelize.define("Professor", {
-    pname: {
+    lastName: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    office: {
+    firstName: {
       type: DataTypes.STRING,
       allowNull: false
     },
+    building: DataTypes.STRING,
+    office: DataTypes.STRING,
     dept: {
       type: DataTypes.STRING,
       allowNull: false
