@@ -32,10 +32,15 @@ app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/apiRoutes")(app);
-require("./routes/apiRoutesCourse")(app);
-require("./routes/apiRoutesClass")(app);
 require("./routes/htmlRoutes")(app);
 require("./routes/authRoutes")(app);
+
+// Temporary Routes
+require("./routes/apiRoutesCourse")(app);
+require("./routes/apiRoutesClass")(app);
+require("./routes/apiRoutesEnrollment")(app);
+require("./routes/apiRoutesProfessor")(app);
+require("./routes/apiRoutesStudent")(app);
 
 var syncOptions = { force: false };
 

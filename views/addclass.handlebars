@@ -14,11 +14,36 @@ console.log("Inside addclass.handlebars");
         </div>
         <div class="row">
             <div class="col-md-10 mx-auto border border-dark rounded login-container">
-                <div class="col-md-10 mx-auto text-center rounded login-head">Add a Course</div>
+                <div class="col-md-10 mx-auto text-center rounded login-head">Add a Class</div>
                 <div class="row mx-auto">
                     <form class="mx-auto login">
                         <div class="form-group text-center m-0">
-                            <label for="cname-input m-0">Course Name</label>
+
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="classNameButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Classes
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="classNameButton">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="classNameButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Classes
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="classNameButton">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+
+
+
+
                             <input type="text" class="form-control" id="cname-input" placeholder="e.g. JavaScript">
                         </div>
                         <div class="form-group text-center m-0">

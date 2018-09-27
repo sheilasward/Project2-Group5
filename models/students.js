@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true
       }
     },
-    year: {
+    studentYear: {
       type: DataTypes.INTEGER,
       default: 1
     }

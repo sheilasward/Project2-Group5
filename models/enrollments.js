@@ -11,8 +11,10 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
     Enrollment.belongsTo(models.Student, {
-      foreignKey: "studentid",
-      targetKey: "id"
+      foreignKey: {
+        name: "studentid",
+        allowNull: false
+      }
     });
   };
 
