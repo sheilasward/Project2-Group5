@@ -6,10 +6,42 @@ var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 var db = require("./models");
-
+var courseSeeds = require("./db/json/courses.json");
 var app = express();
 var PORT = process.env.PORT || 3000;
-
+//Define an array containing all models for which seeds need to be appended
+var modelObj = {
+  modelss: [
+    {
+      dbb: db.Course,
+      js: "courses.json"
+    },
+    {
+      dbb: db.Class,
+      js: "classes.json"
+    },
+    {
+      dbb: db.Enrollment,
+      js:"enrollments.json"
+    },
+    {
+      dbb: db.Mark,
+      js: "marks.json"
+    },
+    {
+      dbb: db.Professor,
+      js: "professors.json"
+    },
+    {
+      dbb: db.Student,
+      js: "students.json"
+    }
+  ],
+  req: function(mod){
+    var seeds = require("./db/json/" + this.modelss[mod].js);
+    return seeds;
+  }
+};
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -44,7 +76,7 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
+db.sequelize.sync(syncOptions).then(function () {
   app.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
@@ -52,6 +84,14 @@ db.sequelize.sync(syncOptions).then(function() {
       PORT
     );
   });
+  for (var b = 0; b < modelObj.modelss.length; b++) {
+    var seeds = modelObj.req(b);
+    for (var a = 0; a < seeds.length; a++) {
+      modelObj.modelss[b].dbb.create(seeds[a]).then(function(dbCourse) {
+        console.log(dbCourse);
+      });
+    }
+  }
 });
 
 module.exports = app;

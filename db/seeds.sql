@@ -8,7 +8,7 @@ insert into professors (lastName, firstName, building, office, dept, createdAt, 
 insert into professors (lastName, firstName, building, office, dept, createdAt, updatedAt) values ('Halsey', 'Rebecca', 'AT', '124', 'Computer Science', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 insert into professors (lastName, firstName, building, office, dept, createdAt, updatedAt) values ('Durham', 'Zach', 'AG', '306', 'Web Development', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
-select * from professor;
+select * from professors;
 
 insert into courses (courseName, courseDesc, credits, dept, prerequisite, createdAt, updatedAt) values ('CSC-151', 'Beginning JAVA', 3, 'Computer Science', 'CSC-121', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 insert into courses (courseName, courseDesc, credits, dept, prerequisite, createdAt, updatedAt) values ('CSC-252', 'Advanced JAVA', 3, 'Computer Science', 'CSC-151', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
