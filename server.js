@@ -1,5 +1,4 @@
 require("dotenv").config();
-require("./config/configg.js");
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
@@ -16,10 +15,10 @@ var modelObj = {
       dbb: db.Course,
       js: "courses.json"
     },
-    {
-      dbb: db.Class,
-      js: "classes.json"
-    },
+    // {
+    //   dbb: db.Class,
+    //   js: "classes.json"
+    // },
     // {
     //   dbb: db.Enrollment,
     //   js:"enrollments.json"
@@ -31,7 +30,8 @@ var modelObj = {
     {
       dbb: db.Professor,
       js: "professors.json"
-    },
+    }
+    ,
     {
       dbb: db.Student,
       js: "students.json"
