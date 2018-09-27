@@ -13,7 +13,8 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     year: {
-      type: DataTypes.DATE
+      type: DataTypes.INTEGER,
+      default: 1
     }
   });
 
