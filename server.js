@@ -1,4 +1,5 @@
 require("dotenv").config();
+require("./config/configg.js");
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
@@ -6,7 +7,6 @@ var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 var db = require("./models");
-var courseSeeds = require("./db/json/courses.json");
 var app = express();
 var PORT = process.env.PORT || 3000;
 //Define an array containing all models for which seeds need to be appended
@@ -20,14 +20,14 @@ var modelObj = {
       dbb: db.Class,
       js: "classes.json"
     },
-    {
-      dbb: db.Enrollment,
-      js:"enrollments.json"
-    },
-    {
-      dbb: db.Mark,
-      js: "marks.json"
-    },
+    // {
+    //   dbb: db.Enrollment,
+    //   js:"enrollments.json"
+    // },
+    // {
+    //   dbb: db.Mark,
+    //   js: "marks.json"
+    // },
     {
       dbb: db.Professor,
       js: "professors.json"
