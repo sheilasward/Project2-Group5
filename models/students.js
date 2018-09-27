@@ -25,7 +25,6 @@ module.exports = function(sequelize, DataTypes) {
         name: "studentid"
       }
     });
-
   };
 
   return Student;
