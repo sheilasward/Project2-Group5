@@ -1,0 +1,14 @@
+[
+    {
+        "term": "Second",
+        "section": "Section 1",
+        "days": "40",
+        "begTime": "Time default",
+        "building": "Hyatt",
+        "room":"Room1",
+        "maxNumStudents":100,
+        "currNumStudents":1,
+        "courseid":1,
+        "professorid":1
+    }
+]
