@@ -11,28 +11,9 @@
         </div>
         <div class="row">
             <div class="col-md-10 mx-auto border border-dark rounded login-container">
-                <div class="col-md-10 mx-auto text-center rounded login-head">Welcome </div>
+                <div class="col-md-10 mx-auto text-center rounded login-head">Welcome Professor {{lastname}}  </div>
                     <p class="text-center">Please click <a href="/addcourse">here</a> to add a course</p>
-                <div class="row mx-auto">
-                    <form class="mx-auto signup">
-                        <div class="form-group text-center m-0">
-                            <label for="email-input m-0">Email address</label>
-                            <input type="email" class="form-control" id="email-input" placeholder="Enter email">
-                        </div>
-                        <div class="form-group text-center m-0">
-                            <label for="password-input m-0">Password</label>
-                            <input type="password" class="form-control" id="password-input" placeholder="Password">
-                        </div>
-                        <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                            <span class="sr-only">Error:</span> <span class="msg"></span>
-                        </div>
-                        <div class="mx-auto text-center">
-                            <button type="submit" class="btn btn-primary">Sign Up</button>
-                        </div>
-                        <p class="text-center">Or log in <a href="/login">here</a></p>
-                    </form>
-                </div>
+                    <p class="text-center">Please click <a href="/addschedule">here</a> to build a schedule</p>
             </div>
         </div>
 
@@ -41,4 +22,4 @@
 
     </div>
 </div>
-<script type="text/javascript" src="js/members.js"></script>
+<script type="text/javascript" src="js/professors.js"></script>
