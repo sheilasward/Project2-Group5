@@ -37,12 +37,14 @@ $(document).ready(function() {
     function signUpUser(email, password, firstName, lastName) {
       $.post("/api/signup", {
         email: email,
-        password: password
+        password: password,
+        lastName: lastName,
+        firstName: firstName
       })
         .then(function(data) {
           console.log(data);
           if (data.name === "SequelizeUniqueConstraintError") {
-            console.log(data.name);
+            // console.log(data.name);
             $("#alert .msg").text(
               `${
                 data.fields.email
@@ -50,18 +52,17 @@ $(document).ready(function() {
             );
             $("#alert").fadeIn(500);
           } else {
-            // window.location.replace(data);
-            $.post("/api/new", {
-              lastName: lastName,
-              firstName: firstName,
-              studentEmail: email
-            }).then(function(data) {
-              console.log(data);
-              window.location.replace(data);
-            });
+            // $.post("/api/new", {
+            //   lastName: lastName,
+            //   firstName: firstName,
+            //   studentEmail: email
+            // }).then(function(data) {
+            //   console.log(data.id + "this is the data.id");
+            window.location.replace(data.id);
           }
-          // If there's an error, handle it by throwing up a bootstrap alert
         })
+        // If there's an error, handle it by throwing up a bootstrap alert
+        // })
         .catch(handleLoginErr);
     }
 
