@@ -1,25 +1,30 @@
+<!DOCTYPE HTML>
+<script type = "text/javascript"> 
+console.log("Inside professor.handlebars");
+</script>
 <div class="container row col-md-12">
-    <div class="col-md-3 my-auto border border-dark sidebar sidebar-left">
-
-    </div>
     <div class="col-md-6 border border-dark main-body">
         <div class="row">
-            <div class="col-md-10 mx-auto text-center">
-                <a href="/"<span class="mx-auto"><img class="mx-auto" src="/imgs/BootcampU.png"></span></a>
-                {{!-- <h1 class="col-md mx-auto text-center main-head rounded">Bootcamp University</h1> --}}
+            <div class="col-md-10 mx-auto">
+                <h1 class="col-md mx-auto text-center main-head rounded">Welcome Professor <span id="profname" >{{lastName}}</span></h1>
+                <span id = "profid">{{id}}</span>
             </div>
         </div>
         <div class="row">
             <div class="col-md-10 mx-auto border border-dark rounded login-container">
-                <div class="col-md-10 mx-auto text-center rounded login-head">Welcome Professor {{lastname}}  </div>
-                    <p class="text-center">Please click <a href="/addcourse">here</a> to add a course</p>
-                    <p class="text-center">Please click <a href="/addschedule">here</a> to build a schedule</p>
+                <div class="col-md-10 mx-auto text-center rounded login-head"><a href="/addcourse" id="addcourse" class="btn btn-primary btn-large"> Please click here to add a course </a></div>
+            </div>
+            <div class="col-md-10 mx-auto border border-dark rounded login-container">
+                <div class="col-md-10 mx-auto text-center rounded login-head"><a class="btn btn-primary btn-large"> Please click here to create a schedule </a></div>
             </div>
         </div>
-
-    </div>
-    <div class="col-md-3 my-auto border border-dark sidebar sidebar-left">
-
+        <div class="row">
+            <button onclick="addCourse()">Add a course test</button>
+            <div class="mx-auto text-center" id = "divprompt">
+                <a href="/professors/{{id}}"> back to Members page</a>
+            </div>
+        </div>
     </div>
 </div>
-<script type="text/javascript" src="js/professors.js"></script>
+<script type="text/javascript" src="/js/professors.js"></script>
+ 

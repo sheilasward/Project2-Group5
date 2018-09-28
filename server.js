@@ -94,9 +94,7 @@ db.sequelize.sync(syncOptions).then(function () {
   for (var b = 0; b < modelObj.modelss.length; b++) {
     var seeds = modelObj.req(b);
     for (var a = 0; a < seeds.length; a++) {
-      modelObj.modelss[b].dbb.create(seeds[a]).then(function(dbCourse) {
-        console.log(dbCourse);
-      });
+      modelObj.modelss[b].dbb.create(seeds[a]).then();
     }
   }
 });

@@ -27,6 +27,7 @@ module.exports = function(app) {
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
     console.log(req.body);
+    console.log("inside api signup now");
     db.User.create({
       email: req.body.email,
       password: req.body.password

@@ -29,7 +29,7 @@ module.exports = function(app) {
         id: req.params.pid
       }
     }).then(function(dbProfessors) {
-      console.log(dbProfessors);
+      console.log(dbProfessors.dataValues);
       res.render("professors", dbProfessors.dataValues);
     });
   });
