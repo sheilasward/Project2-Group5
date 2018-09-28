@@ -16,7 +16,7 @@ $("#addclass").on("click", function(event) {
   console.log("Inside Add Course");
   console.log(deptInput);
   var userData = {
-    courseName: cnameInput.val().trim(),
+    courseName: classNameInput.val().trim(),
     credits: creditInput.val().trim(),
     courseDesc: descInput.val().trim(),
     dept: deptInput.val(),
@@ -30,7 +30,7 @@ $("#addclass").on("click", function(event) {
   }
   // If we have our inputs in proper order, run the signUpUser function
   addCourse(userData);
-  cnameInput.val("");
+  classNameInput.val("");
   creditInput.val("");
 });
 // Does a post to the addcourse route. If successful, we are redirected to the main page
