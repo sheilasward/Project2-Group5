@@ -11,13 +11,13 @@ $("#addcourse").on("click", function(event) {
   var preInput = $("#pre-input");
 
   console.log("Inside addcourse.js");
-
+  
   alert("Inside");
   console.log("Inside Add Course");
-  console.log(deptInput);
+  console.log("deptInput = " + deptInput);
   var userData = {
     courseName: cnameInput.val().trim(),
-    credits: creditInput.val().trim(),
+    credits: creditInput.val(),
     courseDesc: descInput.val().trim(),
     dept: deptInput.val(),
     prerequisite: preInput.val()
@@ -46,7 +46,6 @@ function addCourse(userData) {
 }
 
 function handleAddCourseErr(err) {
-  console.log(err.responseJSON);
   $("#alert .msg").text(err.responseJSON);
   $("#alert").fadeIn(500);
 }

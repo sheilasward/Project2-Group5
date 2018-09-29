@@ -40,6 +40,13 @@ module.exports = function(app) {
     });
   });
   // Load example page and pass in an example by id
+  app.get("/student-signup", function(req, res) {
+    res.render("searchclass", {
+      msg: "Register for Classes"
+    });
+  });
+
+  // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     res.render("example", {});
   });

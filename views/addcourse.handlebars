@@ -16,44 +16,62 @@
                 <div class="col-md-10 mx-auto text-center rounded login-head">Add a Course</div>
                 <div class="row mx-auto">
                     <form class="mx-auto login">
+
                         <div class="form-group text-center m-0">
                             <label for="cname-input m-0">Course Name</label>
                             <input type="text" class="form-control" id="cname-input" placeholder="e.g. JavaScript">
-                        </div>
-                        <div class="form-group text-center m-0">
-                            <label for="credit-input m-0">Credits</label>
-                            <input type="text" class="form-control" id="credit-input" placeholder="default 3">
-                        </div>
+                        </div><br>
+
                         <div class="form-group text-center m-0">
                             <label for="desc-input m-0">Description</label>
                             <input type="text" class="form-control" id="desc-input" placeholder="e.g. - this class is gauranteed to cure insomnia">
-                        </div>
-                        <br>
+                        </div><br>
+
+                        <div class="form-group text-center m-0">
+                            <label for="pre-input m-0">Pre-requisites </label>
+                            <input type="text" class="form-control" id="pre-input" placeholder="class you must take before this class">
+                        </div><br>
+
                         <div class="form-group text-left m-0">
-                            <label for="dept-input m-0">Department: </label>
+                            <label for="credit-input m-0">Credits:&emsp;</label>
+                            <select id="credit-input" class="form-select m-0">
+                                <option value="3">3 - usual value</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                        </div><br>
+                        
+                        <div class="form-group text-left m-0">
+                            <label for="dept-input m-0">Department:&emsp;</label>
                             <select id="dept-input" class="form-select m-0">
-                                <option value="Web_development">Web development</option>
-                                <option value="Data_analytics">Data analytics</option>
-                                <option value="Project_management">Project management</option>
-                                <option value="Cool_fourth_option">That cool fourth option</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Database Management">Database Management</option>
+                                <option value="Information Systems">Information Systems</option>
+                                <option value="Project Management">Project Management</option>
+                                <option value="Web Development">Web Development</option>
                             </select>
-                        </div>
-                        <br>
-                        <div class="form-group text-left m-0">
-                            <label for="pre-input m-0">Pre-requisites: </label>
-                            <select id="pre-input" class="form-select m-0">
-                                <option value="Birth">Birth</option>
-                                <option value="None">None</option>
-                            </select>
-                        </div>
-                        <br>
+                        </div><br>
+                        
                         <div style="display: none" id="alert" class="alert alert-danger" role="alert">
                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                             <span class="sr-only">Error:</span> <span class="msg"></span>
-                        </div>
-                        <br>
+                        </div><br>
+
                         <div class="mx-auto text-center">
                             <button type="button" id="addcourse" class="btn btn-primary login-btn">Add Course</button>
+<<<<<<< HEAD
+                        </div><br>
+
+                        <div class="mx-auto text-center" id = "divprompt">
+                            <a href="/members"> back to Members page</a>
+                        </div><br><br>
+=======
                         </div>
 <<<<<<< HEAD
                         <div class="mx-auto text-center" id = "divprompt">
@@ -64,6 +82,7 @@
 >>>>>>> a6b8643d1e3806fc51f740342e5798ffc45cab5b
                         </div>
 
+>>>>>>> master
                     </form>
                 </div>
             </div>
