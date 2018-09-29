@@ -58,7 +58,9 @@ $(document).ready(function() {
             //   studentEmail: email
             // }).then(function(data) {
             //   console.log(data.id + "this is the data.id");
-            window.location.replace(data.id);
+            localStorage.setItem("loginObject", JSON.stringify(data));
+            console.log(data);
+            window.location.replace("/user/" + data.id);
           }
         })
         // If there's an error, handle it by throwing up a bootstrap alert
