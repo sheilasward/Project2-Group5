@@ -10,12 +10,7 @@ config.password = process.env.mysqlPasswd;
 var db = {};
 
 if (config.use_env_variable) {
-  var sequelize = new Sequelize(
-    {
-      dialect: "mysql"
-    },
-    process.env[config.use_env_variable]
-  );
+  var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
   var sequelize = new Sequelize(
     config.database,
