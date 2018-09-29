@@ -52,11 +52,11 @@ function renderClasses(object) {
       <td>${object[i].room}</td>
       <td>${object[i].maxNumStudents}</td>
       <td>${object[i].currNumStudents}</td>
+      <td><button class="enr btn-primary" value="Enroll" id=${object[i].id}>Enroll now</td>
     </tr>`;
-    $("#classes")
-      .append(newRow)
-      .append($("<button>", { id: object[i].id, text: "Enroll now" }));
-    $("#" + object[i].id).attr({ class: "enr btn-primary", value: "Enroll" });
+    $("#classes").append(newRow)
+    // .append($("<button>", { id: object[i].id, text: "Enroll now" }));
+    // $("#" + object[i].id).attr({ class: "enr btn-primary", value: "Enroll" });
     // $("#" + object[i].id).value = "Enroll";
     // .append( $("<button>", { text: "Enroll Now",  id: object[i].id, class: "enr btn-primary" }) );
     $("#" + object[i].id).on("click", function() {
