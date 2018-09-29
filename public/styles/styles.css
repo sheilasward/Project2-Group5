@@ -53,7 +53,10 @@ body {
   bottom: 0;
   width: 100%;
 }
-
+.classes-table {
+  font-size: 10pt;
+  margin-top: 10px;
+}
 /* Style the links inside the navigation bar */
 .navbar a {
   float: left;
