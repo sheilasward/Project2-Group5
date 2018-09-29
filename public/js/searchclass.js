@@ -20,9 +20,8 @@ $("#search-class").on("click", function(event) {
   });
 });
 
-function renderClasses(page, data) {
-  if (data.length !== 0) {
-    page.render("show-classes");
+function renderClasses(data) {
+  if (data === data) {
     $("#classes").empty();
     for (var i = 0; i < data.length; i++) {
       var div = $("<div>");
