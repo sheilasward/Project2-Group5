@@ -1,4 +1,4 @@
-$("#search-class").on("click", function (event) {
+$("#search-class").on("click", function(event) {
   // When the search-class button is clicked, we need to get information from the classes database
 
   event.preventDefault();
@@ -15,7 +15,7 @@ $("#search-class").on("click", function (event) {
   $.post("/api/class-search", {
     term: body.term,
     dept: body.dept
-  }).then(function (data) {
+  }).then(function(data) {
     console.log("data: " + JSON.stringify(data));
     console.log(data.length);
     renderClasses(data);
@@ -59,7 +59,7 @@ function renderClasses(object) {
     $("#" + object[i].id).attr({ class: "enr btn-primary", value: "Enroll" });
     // $("#" + object[i].id).value = "Enroll";
     // .append( $("<button>", { text: "Enroll Now",  id: object[i].id, class: "enr btn-primary" }) );
-    $("#" + object[i].id).on("click", function(){
+    $("#" + object[i].id).on("click", function() {
       event.preventDefault();
       // alert(this.id);
       var userData = {
