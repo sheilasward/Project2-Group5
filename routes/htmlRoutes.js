@@ -54,8 +54,7 @@ module.exports = function(app) {
       ]
     }).then(function(dbStud) {
       console.log(dbStud);
-      
-      var finalResult=[];
+      var finalResult = [];
       for (var x = 0; x < dbStud.length; x++) {
         for (var y = 0; y < dbStud[x].Enrollments.length; y++) {
           finalResult.push({
@@ -71,7 +70,6 @@ module.exports = function(app) {
       }
       // res.json(finalResult);
       res.render("markstud", { finalResult: finalResult });
-
     });
   });
   // Load example page and pass in an example by id
