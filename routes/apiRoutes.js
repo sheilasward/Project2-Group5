@@ -23,6 +23,16 @@ module.exports = function(app) {
       res.json(dbCourse);
     });
   });
+
+  // Create a new example
+  app.post("/api/addgrade", function(req, res) {
+    console.log("recieved");
+    console.log(req.body);
+    db.Mark.create(req.body).then(function(dbMark) {
+      res.json(dbMark);
+    });
+  });
+
   //add a new student
   app.post("/api/new", function(req, res) {
     db.Student.create({
