@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all classes for passed term and passed department
-  app.get("/api/class-search", function(req, res) {
+  app.post("/api/class-search", function(req, res) {
     db.Class.findAll({
       where: {
         term: req.body.term
@@ -19,6 +19,7 @@ module.exports = function(app) {
         }
       ]
     }).then(function(results) {
+      console.log(results);
       res.json(results);
     });
   });
