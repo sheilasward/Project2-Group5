@@ -21,4 +21,23 @@ module.exports = function(app) {
       res.json(dbEnrollments);
     });
   });
+  app.get("/api/gradeget", function(req, res) {
+    console.log("Getting your Grades");
+    console.log("DB!!!!!!!!!!! ", db.Enrollment);
+    db.Mark.findAll({
+      include: [
+        {
+          model: db.Class,
+          include: {
+            model: db.Course
+          }
+        },
+        {
+          model: db.Student
+        }
+      ]
+    }).then(function(dbMark) {
+      res.json(dbMark);
+    });
+  });
 };
