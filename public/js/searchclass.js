@@ -1,4 +1,4 @@
-$("#search-class").on("click", function(event) {
+$("#search-class").on("click", function (event) {
   // When the search-class button is clicked, we need to get information from the classes database
 
   event.preventDefault();
@@ -15,7 +15,7 @@ $("#search-class").on("click", function(event) {
   $.post("/api/class-search", {
     term: body.term,
     dept: body.dept
-  }).then(function(data) {
+  }).then(function (data) {
     console.log("data: " + JSON.stringify(data));
     console.log(data.length);
     renderClasses(data);
@@ -34,6 +34,7 @@ function renderClasses(object) {
       <th scope="col">Room</th>
       <th scope="col">Capacity</th>
       <th scope="col">Enrolled</th>
+      <th scope="col">Enroll Now"</th>
     </tr>
   </thead>
   <tbody id="classes">
@@ -52,6 +53,38 @@ function renderClasses(object) {
       <td>${object[i].maxNumStudents}</td>
       <td>${object[i].currNumStudents}</td>
     </tr>`;
-    $("#classes").append(newRow);
+    $("#classes")
+      .append(newRow)
+      .append($("<button>", { id: object[i].id, text: "Enroll now" }));
+    $("#" + object[i].id).attr({ class: "enr btn-primary", value: "Enroll" });
+    // $("#" + object[i].id).value = "Enroll";
+    // .append( $("<button>", { text: "Enroll Now",  id: object[i].id, class: "enr btn-primary" }) );
+    $("#" + object[i].id).on("click", function(){
+      event.preventDefault();
+      // alert(this.id);
+      var userData = {
+        term: $("#term-input").val(),
+        classid: this.id,
+        studentid: 1
+      };
+      console.log(userData);
+      if (!userData.term) {
+        return;
+      }
+      // If we have our inputs in proper order, run the signUpUser function
+      addEnroll(userData);
+    });
+    function addEnroll(userData) {
+      $.post("/api/enroll", userData)
+        .then(function(data) {
+          console.log(data);
+          // window.location.replace(data);
+        })
+        .catch(handleAddEnrollErr);
+    }
+    function handleAddEnrollErr(err) {
+      $("#alert .msg").text(err.responseJSON);
+      $("#alert").fadeIn(500);
+    }
   }
 }

@@ -60,6 +60,14 @@ app.get("/api/class-search", function(req, res) {
       res.json(dbCourse);
     });
   });
+  // Create a new example
+  app.post("/api/enroll", function(req, res) {
+    console.log("recieved");
+    console.log(req.body);
+    db.Enrollment.create(req.body).then(function(dbEnr) {
+      res.json(dbEnr);
+    });
+  });
 
   // Create a new example
   app.post("/api/addgrade", function(req, res) {
