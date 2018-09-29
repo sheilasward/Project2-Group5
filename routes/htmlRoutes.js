@@ -33,7 +33,12 @@ module.exports = function(app) {
       res.render("professors", dbProfessors.dataValues);
     });
   });
-
+  app.get("/profhome", function(req, res) {
+    db.Professor.findAll({}).then(function(dbProfessors) {
+      console.log(dbProfessors);
+      res.render("profhome", { Professor: dbProfessors });
+    });
+  });
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     res.render("example", {});
