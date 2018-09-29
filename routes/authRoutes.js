@@ -33,7 +33,7 @@ module.exports = function(app) {
       password: req.body.password
     });
     db.Student.create({
-      studentEmail: req.body.studentEmail,
+      studentEmail: req.body.email,
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       studentYear: 1

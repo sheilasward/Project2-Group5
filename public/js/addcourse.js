@@ -1,5 +1,5 @@
 $("#addcourse").on("click", function(event) {
-// When the submit button is clicked, we validate the inputs - the course name should not be blank
+  // When the submit button is clicked, we validate the inputs - the course name should not be blank
 
   event.preventDefault();
   // Getting references to our form and input
@@ -43,7 +43,7 @@ function addCourse(userData) {
       // window.location.replace(data);
     })
     .catch(handleAddCourseErr);
-};
+}
 
 function handleAddCourseErr(err) {
   console.log(err.responseJSON);
