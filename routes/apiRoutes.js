@@ -1,6 +1,42 @@
 var db = require("../models");
 
 module.exports = function(app) {
+  // Get all classes for passed term and passed department
+  app.get("/api/class-search", function(req, res) {
+    db.Class.findAll({
+      where: {
+        term: req.body.term
+      },
+      include: [
+        {
+          model: db.Course,
+          where: {
+            dept: req.body.dept
+          }
+        },
+        {
+          model: db.Professor
+        }
+      ]
+    }).then(function(results) {
+      res.json(results);
+    });
+  });
+
+  /*
+app.get("/api/class-search", function(req, res) {
+    Class.findAll({
+      where: {
+        term: req.body.term,
+        dept: req.body.dept
+      },
+      order: [["pages", "DESC"]]
+    }).then(function(results) {
+      res.json(results);
+    });
+  });
+  */
+
   // Get all examples
   app.get("/api/examples", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
