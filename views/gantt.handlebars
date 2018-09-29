@@ -1,5 +1,4 @@
-<html>
-<head>
+  <h1 class="login-container text-center rounded"> Schedule </h1>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
     google.charts.load('current', {'packages':['gantt']});
@@ -10,31 +9,30 @@
     }
 
     function drawChart() {
-
       var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Task ID');
-      data.addColumn('string', 'Task Name');
+      data.addColumn('string', 'Course ID');
+      data.addColumn('string', 'Course Name');
       data.addColumn('date', 'Start Date');
       data.addColumn('date', 'End Date');
       data.addColumn('number', 'Duration');
       data.addColumn('number', 'Percent Complete');
-      data.addColumn('string', 'Dependencies');
+      data.addColumn('string', 'Pre-requisites');
 
       data.addRows([
-        ['Research', 'Find sources',
+        ['CSC001', 'Begin JAVA',
          new Date(2015, 0, 1), new Date(2015, 0, 5), null,  100,  null],
-        ['Write', 'Write paper',
-         null, new Date(2015, 0, 9), daysToMilliseconds(3), 25, 'Research,Outline'],
-        ['Cite', 'Create bibliography',
-         null, new Date(2015, 0, 7), daysToMilliseconds(1), 20, 'Research'],
-        ['Complete', 'Hand in paper',
-         null, new Date(2015, 0, 10), daysToMilliseconds(1), 0, 'Cite,Write'],
-        ['Outline', 'Outline paper',
-         null, new Date(2015, 0, 6), daysToMilliseconds(1), 100, 'Research']
+        ['CSC002', 'Hot JAVA',
+         null, new Date(2015, 0, 9), daysToMilliseconds(3), 25, 'CSC001'],
+        ['CSC003', 'A second cup',
+         null, new Date(2015, 0, 7), daysToMilliseconds(1), 20, 'CSC001'],
+        ['DA001', 'Python',
+         null, new Date(2015, 0, 10), daysToMilliseconds(1), 0, null],
+        ['DA002', 'Monty Python',
+         null, new Date(2015, 0, 6), daysToMilliseconds(1), 100, 'DA001']
       ]);
 
       var options = {
-        height: 275
+        height: 550
       };
 
       var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
@@ -42,8 +40,5 @@
       chart.draw(data, options);
     }
   </script>
-</head>
-<body>
   <div id="chart_div"></div>
-</body>
-</html>
+
