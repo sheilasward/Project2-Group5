@@ -1,4 +1,4 @@
-// var db = require("../models");
+var db = require("../models");
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
@@ -21,6 +21,28 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, function(req, res) {
     res.render("members", {
       msg: "Welcome Member!"
+    });
+  });
+  app.get("/professors/:pid", function(req, res) {
+    db.Professor.findOne({
+      where: {
+        id: req.params.pid
+      }
+    }).then(function(dbProfessors) {
+      console.log(dbProfessors.dataValues);
+      res.render("professors", dbProfessors.dataValues);
+    });
+  });
+  app.get("/profhome", function(req, res) {
+    db.Professor.findAll({}).then(function(dbProfessors) {
+      console.log(dbProfessors);
+      res.render("profhome", { Professor: dbProfessors });
+    });
+  });
+  // Load example page and pass in an example by id
+  app.get("/student-signup", function(req, res) {
+    res.render("searchclass", {
+      msg: "Register for Classes"
     });
   });
 

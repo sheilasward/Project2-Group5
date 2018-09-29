@@ -6,6 +6,19 @@ body {
   background-image: url(../imgs/BCUbackground.jpg);
 }
 
+
+
+.logo {
+  height: 150px;
+  width: 150px;
+  padding: 30px;
+}
+
+.jumbotron{
+  height: 220px;
+  background-color: #0C73B8;
+}
+
 .main-head {
   font-size: 40pt;
   margin-top: 20pt;

@@ -1,0 +1,48 @@
+/*
+body {
+    background: #000000;
+}
+*/
+html { 
+    background: url(../imgs/BCUbackground.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.menuHdr {
+    background: #389168;
+    height: 180px;
+}
+
+
+/* background: #0C73B8; #2E95C2; #032F60; #389168;*/
+.logo-container {
+    display: flex;
+}
+.logo {
+    height: 180px;
+    width: 180px;
+    padding: 10px;
+}
+
+.navbar {
+    background: #4e9525;
+}
+/* 4e9525  00541a */
+.nav-link {
+    color: black;
+    font-size: 20px;
+}
+
+.bcu-words {
+    margin: 15px;
+    padding-right: 10px;
+    border-right: 2px solid black;
+}
+
+.italic {
+    font-style: italic;
+}
+  

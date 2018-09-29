@@ -6,5 +6,29 @@
         "dept": "Computer Science",
         "office": "CSC"
     
+    },
+    {
+        "lastName": "Seinfeld",
+        "firstName": "Jerry",
+        "building": "Hyatt House",
+        "dept": "Philosophy",
+        "office": "CSC"
+    
+    },
+    {
+        "lastName": "Constanza",
+        "firstName": "George",
+        "building": "Hyatt House",
+        "dept": "Computer Science",
+        "office": "CSC"
+    
+    },
+    {
+        "lastName": "Benez",
+        "firstName": "Elaine",
+        "building": "Hyatt House",
+        "dept": "Data Analytics",
+        "office": "DSC"
+    
     }
 ]
