@@ -10,9 +10,6 @@ $("#addcourse").on("click", function(event) {
   var deptInput = $("#dept-input");
   var preInput = $("#pre-input");
 
-  console.log("Inside addcourse.js");
-  
-  alert("Inside");
   console.log("Inside Add Course");
   console.log("deptInput = " + deptInput);
   var userData = {
