@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<div class="container row col-md-12">
+    <div class="col-md-3 my-auto sidebar sidebar-left">
+
+    </div>
+    <div class="col-md-6 border border-dark main-body">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <h1 class="col-md mx-auto text-center main-head rounded"> Mark your Students </h1>
+            </div>
+        </div>
+        <div class="row rounded  mx-auto mx-auto">
+            <div class="col-md-10 ">
+                
+                    {{#each finalResult }}
+                        <div class="card">
+                            <div class="card-header">
+                                {{firstName}} {{lastName}}
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{courseName}}, {{term}}</h5>
+                                <p class="card-text">Grade for {{courseName}}: {{courseDesc}}</p>
+                                <div id="classid-{{id}}" hidden="true">{{classid}}</div>
+                                <div id="studid-{{id}}" hidden="true">{{id}}</div>
+                                <input type="text" default="we use grade points we are lazy..." id="grade-{{id}}"></input>
+                                <br>
+                                <a href="#" id="{{id}}" class="grade-btn btn btn-primary">Grade the Guy</a>
+                            </div>
+                        </div>
+                    <li> <a href="/professors/{{id}}"> {{firstName}} {{lastName}}</a></li>
+                    {{/each}}
+                
+            </div>
+        </div>               
+    </div>
+</div>
+<script type="text/javascript" src="/js/markstud.js"></script>
+ 

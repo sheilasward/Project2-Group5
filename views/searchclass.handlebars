@@ -3,36 +3,41 @@
 console.log("Inside searchclass.handlebars");
 </script>
 <div class="container row col-md-12">
-  <div class="col-md-6 border border-dark main-body">
+  <div class="col-md-1 my-auto sidebar sidebar-left">
+
+  </div>
+  <div class="col-md-10 main-body">
     <div class="row">
       <div class="col-md-10 mx-auto">
-        <h1 class="col-md mx-auto text-center main-head rounded">Bootcamp University</h1>
+        <div class="col-md-10 mx-auto text-center">
+            <a href="/"<span class="mx-auto"><img class="mx-auto" src="/imgs/BootcampU.png"></span></a>
+        </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-10 mx-auto border border-dark rounded login-container">
+      <div class="col-md-10 mx-auto rounded login-container">
         <div class="col-md-10 mx-auto text-center rounded login-head">{{msg}}</div>
           <div class="row mx-auto">
             <form class="mx-auto login">
-              <hr><br>
               <div class="form-group text-center m-0">
               <label for="term-input m-0">Term</label><br>
                 <select id="term-input" class="form-select m-0">
-                  <option value="Fall_2018">Fall 2018</option>
-                  <option value="Spring_2019">Spring 2019</option>
+                  <option value="Fall 2018">Fall 2018</option>
+                  <option value="Spring 2018">Spring 2018</option>
                 </select>
               </div>
               <br>
               <div class="form-group text-center m-0">
               <label for="dept-input m-0">Department</label><br>
                 <select id="dept-input" class="form-select m-0">
-                  <option value="Web_Development">Web Development</option>
-                  <option value="Computer_Science">Computer Science</option>
-                  <option value="Information_Systems">Information Systems</option>
-                  <option value="Computer_Technology_Integration">Computer Technology Integration</option>
+                  <option value="Web Development">Web Development</option>
+                  <option value="Computer Science">Computer Science</option>
+                  <option value="Information Systems">Information Systems</option>
+                  <option value="Computer Technology Integration">Computer Technology Integration</option>
                   <option value="All">All Departments</option>
                 </select>
               </div>
+              <div id="class-table"></div>
               <hr><br>
               <div style="display: none" id="alert" class="alert alert-danger" role="alert">
                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>

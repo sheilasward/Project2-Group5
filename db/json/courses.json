@@ -1,0 +1,9 @@
+[
+    {
+        "courseName": "CSC-151",
+        "courseDesc": "Beginning JAVA",
+        "credits": 3,
+        "dept": "Computer Science",
+        "prerequisite": "CSC-121"
+    }
+]

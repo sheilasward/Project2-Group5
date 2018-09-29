@@ -1,20 +1,23 @@
-$("#addcourse").on("click", function(event) {
-  // When the submit button is clicked, we validate the inputs - the course name should not be blank
+$("#addclass").on("click", function(event) {
+  // When the addclass button is clicked, we validate the inputs - the class name should not be blank
 
   event.preventDefault();
   // Getting references to our form and input
 
-  var cnameInput = $("input#cname-input");
+  var classNameInput = $("input#className-input");
   var creditInput = $("input#credit-input");
   var descInput = $("input#desc-input");
   var deptInput = $("#dept-input");
   var preInput = $("#pre-input");
 
+  console.log("Inside addcourse.js");
+
+  alert("Inside");
   console.log("Inside Add Course");
-  console.log("deptInput = " + deptInput);
+  console.log(deptInput);
   var userData = {
-    courseName: cnameInput.val().trim(),
-    credits: creditInput.val(),
+    courseName: classNameInput.val().trim(),
+    credits: creditInput.val().trim(),
     courseDesc: descInput.val().trim(),
     dept: deptInput.val(),
     prerequisite: preInput.val()
@@ -27,7 +30,7 @@ $("#addcourse").on("click", function(event) {
   }
   // If we have our inputs in proper order, run the signUpUser function
   addCourse(userData);
-  cnameInput.val("");
+  classNameInput.val("");
   creditInput.val("");
 });
 // Does a post to the addcourse route. If successful, we are redirected to the main page
@@ -43,6 +46,7 @@ function addCourse(userData) {
 }
 
 function handleAddCourseErr(err) {
+  console.log(err.responseJSON);
   $("#alert .msg").text(err.responseJSON);
   $("#alert").fadeIn(500);
 }

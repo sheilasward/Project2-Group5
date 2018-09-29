@@ -1,48 +1,43 @@
-$("#addcourse").on("click", function(event) {
+$(".grade-btn").on("click", function(event) {
   // When the submit button is clicked, we validate the inputs - the course name should not be blank
 
   event.preventDefault();
   // Getting references to our form and input
 
-  var cnameInput = $("input#cname-input");
-  var creditInput = $("input#credit-input");
-  var descInput = $("input#desc-input");
-  var deptInput = $("#dept-input");
-  var preInput = $("#pre-input");
-
-  console.log("Inside Add Course");
-  console.log("deptInput = " + deptInput);
+  var gradeField = $("#grade-" + this.id).val().trim();
   var userData = {
-    courseName: cnameInput.val().trim(),
-    credits: creditInput.val(),
-    courseDesc: descInput.val().trim(),
-    dept: deptInput.val(),
-    prerequisite: preInput.val()
+    grade: gradeField,
+    classid: $("#classid-"+this.id).text(),
+    studentid: $("#studid-"+this.id).text()
   };
 
   console.log(userData);
 
-  if (!userData.courseName) {
+  if (!userData.grade) {
     return;
   }
   // If we have our inputs in proper order, run the signUpUser function
-  addCourse(userData);
-  cnameInput.val("");
-  creditInput.val("");
+  addGrade(userData);
+  $("#grade-" + this.id).disabled=true;
+  this.text="Grade Added";
+  $(this).css({ "background-color": "yellow", color: "blue" });
 });
 // Does a post to the addcourse route. If successful, we are redirected to the main page
 // Otherwise we log any errors
 
-function addCourse(userData) {
-  $.post("/api/addcourse", userData)
+function addGrade(userData,thiss) {
+  $.post("/api/addgrade", userData)
     .then(function(data) {
       console.log(data);
+      return "A";
+
       // window.location.replace(data);
     })
     .catch(handleAddCourseErr);
 }
 
 function handleAddCourseErr(err) {
+  console.log(err.responseJSON);
   $("#alert .msg").text(err.responseJSON);
   $("#alert").fadeIn(500);
 }

@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all classes for passed term and passed department
-  app.get("/api/class-search", function(req, res) {
+  app.post("/api/class-search", function(req, res) {
     db.Class.findAll({
       where: {
         term: req.body.term
@@ -19,6 +19,7 @@ module.exports = function(app) {
         }
       ]
     }).then(function(results) {
+      console.log(results);
       res.json(results);
     });
   });
@@ -59,6 +60,24 @@ app.get("/api/class-search", function(req, res) {
       res.json(dbCourse);
     });
   });
+  // Create a new example
+  app.post("/api/enroll", function(req, res) {
+    console.log("recieved");
+    console.log(req.body);
+    db.Enrollment.create(req.body).then(function(dbEnr) {
+      res.json(dbEnr);
+    });
+  });
+
+  // Create a new example
+  app.post("/api/addgrade", function(req, res) {
+    console.log("recieved");
+    console.log(req.body);
+    db.Mark.create(req.body).then(function(dbMark) {
+      res.json(dbMark);
+    });
+  });
+
   //add a new student
   app.post("/api/new", function(req, res) {
     db.Student.create({

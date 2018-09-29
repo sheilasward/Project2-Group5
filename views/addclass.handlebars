@@ -1,0 +1,71 @@
+
+<script type = "text/javascript"> 
+console.log("Inside addclass.handlebars");
+</script>
+<div class="container row col-md-12">
+    <div class="col-md-3 my-auto sidebar sidebar-left">
+
+    </div>
+    <div class="col-md-6 main-body">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <h1 class="col-md mx-auto text-center main-head rounded">Bootcamp University</h1>
+            </div>
+        </div>
+        <div>
+            A list of 
+        </div>
+        <div class="row">
+            <div class="col-md-10 mx-auto rounded login-container">
+                <div class="col-md-10 mx-auto text-center rounded login-head">Add a Class</div>
+                <div class="row mx-auto">
+                    <form class="mx-auto login">
+                        <div class="form-group text-center m-0">
+
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="classNameButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Classes
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="classNameButton">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="classNameButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Classes
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="classNameButton">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+
+
+
+
+                            <input type="text" class="form-control" id="cname-input" placeholder="e.g. JavaScript">
+                        </div>
+                        <div class="form-group text-center m-0">
+                            <label for="credit-input m-0">Credits</label>
+                            <input type="text" class="form-control" id="credit-input" placeholder="default 3">
+                        </div>
+                        <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span> <span class="msg"></span>
+                        </div>
+                        <div class="mx-auto text-center">
+                            <button type="button" id="addcourse" class="btn btn-primary login-btn">Add Course</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="/js/addcourse.js"></script>
