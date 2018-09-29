@@ -59,7 +59,16 @@ app.get("/api/class-search", function(req, res) {
       res.json(dbCourse);
     });
   });
-
+  //add a new student
+  app.post("/api/new", function(req, res) {
+    db.Student.create({
+      studentEmail: req.body.studentEmail,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName
+    }).then(function(newStudent) {
+      res.json(`/user/${newStudent.id}`);
+    });
+  });
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
     db.Example.destroy({ where: { id: req.params.id } }).then(function(
