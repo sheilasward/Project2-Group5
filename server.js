@@ -30,14 +30,13 @@ var modelObj = {
     {
       dbb: db.Professor,
       js: "professors.json"
-    }
-    ,
+    },
     {
       dbb: db.Student,
       js: "students.json"
     }
   ],
-  req: function(mod){
+  req: function(mod) {
     var seeds = require("./db/json/" + this.modelss[mod].js);
     return seeds;
   }
@@ -83,7 +82,7 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function () {
+db.sequelize.sync(syncOptions).then(function() {
   app.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
