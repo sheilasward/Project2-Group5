@@ -42,7 +42,7 @@ function renderClasses(object) {
 </table>`;
   $("#class-table").append(classTable);
   for (var i = 0; i < object.length; i++) {
-    var newRow = `<tr>
+    var newRow = `<tr data-classID=${object[i].id}>
       <th scope="row">${object[i].Course.courseName}</th>
       <td>${object[i].Professor.lastName}, ${object[i].Professor.firstName}</td>
       <td>${object[i].begTime}</td>
